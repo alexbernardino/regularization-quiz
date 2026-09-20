@@ -3,13 +3,14 @@ import assert from 'node:assert/strict';
 import { questions } from '../questions.js';
 
 test('question bank has the intended emphasis and unique prompts', () => {
-  assert.equal(questions.length, 20);
+  assert.equal(questions.length, 19);
   assert.deepEqual(
     ['Feature expansion', 'Regularization', 'Kernel ridge'].map(section => questions.filter(q => q.section === section).length),
-    [4, 12, 4]
+    [4, 11, 4]
   );
   assert.equal(new Set(questions.map(q => q.prompt)).size, questions.length);
-  assert.deepEqual([0, 1, 2, 3].map(answer => questions.filter(q => q.answer === answer).length), [5, 5, 5, 5]);
+  assert.deepEqual([0, 1, 2, 3].map(answer => questions.filter(q => q.answer === answer).length), [4, 5, 5, 5]);
+  assert.ok(!questions.some(q => q.category === 'Choosing λ'));
 });
 
 test('every question has one valid answer and substantive feedback', () => {

@@ -203,21 +203,6 @@ export const questions = [
   },
   {
     section: "Regularization",
-    category: "Choosing λ",
-    prompt: "How should λ be selected when you want an honest estimate of generalization performance?",
-    options: [
-      "Choose λ using validation or cross-validation, then evaluate once on a held-out test set",
-      "Choose λ to minimize the test error, then report that same test error",
-      "Always choose the largest available λ",
-      "Choose λ using the training SSE alone"
-    ],
-    answer: 0,
-    explanation: "Validation or cross-validation can compare penalty strengths using training-side data. Repeatedly choosing λ on the test set leaks information from that set and makes its final score optimistic.",
-    activity: "Draw a train/validation/test split and mark which part selects λ and which part estimates final performance.",
-    demo: false
-  },
-  {
-    section: "Regularization",
     category: "Bias and variance",
     prompt: "What is a plausible effect of a moderate ridge penalty on predictions from repeated training samples?",
     options: [

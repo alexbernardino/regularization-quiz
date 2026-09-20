@@ -1,9 +1,9 @@
 # Regularization concept check
 
-A 20-question formative quiz in the visual and interaction style of the existing [KNN](https://alexbernardino.github.io/knn-quiz/) and [regression](https://alexbernardino.github.io/regression-quiz/) quizzes.
+A 19-question formative quiz in the visual and interaction style of the existing [KNN](https://alexbernardino.github.io/knn-quiz/) and [regression](https://alexbernardino.github.io/regression-quiz/) quizzes.
 
 - 4 questions on nonlinear feature expansion and RBFs
-- 12 on ridge, lasso, sparsity, scaling, intercepts, validation, and bias–variance
+- 11 on ridge, lasso, sparsity, scaling, intercepts, and bias–variance
 - 4 on kernels and kernel ridge regression
 
 Students answer one question at a time, get immediate feedback, can go back to review, and see a section-by-section result. Relevant questions link to the [interactive regression demo](https://alexbernardino.github.io/regression-interactive/). The quiz needs no account, server, package installation, or network API; answers and scores live only in the open browser tab.
