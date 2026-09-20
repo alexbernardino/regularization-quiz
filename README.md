@@ -23,6 +23,14 @@ Run `node --test tests/quiz.test.mjs` to check the question bank (Node.js 22 rec
 
 The expected URL is <https://alexbernardino.github.io/regularization-quiz/>. All local assets use relative paths, so the site works at this GitHub Pages project URL without a build-time base-path setting.
 
+## Student QR code
+
+The [high-resolution QR image](regularization-quiz-qr.png) opens the published quiz directly on a phone. You can insert the PNG into a lecture slide or print it for the classroom. The same image is published at <https://alexbernardino.github.io/regularization-quiz/regularization-quiz-qr.png> after deployment.
+
+![QR code for the Regularization concept check](regularization-quiz-qr.png)
+
+To regenerate the image if the quiz URL changes, edit `QUIZ_URL` in `tools/generate_qr.py` and run the script with ReportLab and Pillow installed.
+
 ## Teaching notes
 
 The quiz follows the updated lecture PDF's nonlinear feature expansion, RBF, ridge/lasso, and kernel ridge sections (slide numbers 62–85). It deliberately distinguishes the lecture's summed squared-error objective from the companion demo's mean-squared-error convention: slider values need not match λ values numerically. In the slides' notation, KRR uses the canonical penalty βᵀKβ, not a Euclidean penalty on β. The intercept is not penalized.

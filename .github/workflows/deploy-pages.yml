@@ -33,7 +33,7 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir site
-          cp index.html styles.css quiz.js questions.js favicon.svg site/
+          cp index.html styles.css quiz.js questions.js favicon.svg regularization-quiz-qr.png site/
           touch site/.nojekyll
       - name: Upload static site
         uses: actions/upload-pages-artifact@v4
