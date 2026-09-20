@@ -38,3 +38,9 @@ test('intercept question defines its coefficients and excludes the intercept fro
   assert.equal(q.options[q.answer], 'λ‖β‖₂²');
   assert.match(q.explanation, /1ₙ is the n-vector of ones/);
 });
+
+test('kernel ridge questions use the slides coefficient notation', () => {
+  const kernelQuestions = questions.filter(q => q.section === 'Kernel ridge');
+  assert.match(kernelQuestions.find(q => q.category === 'KRR coefficients').prompt, /Kβ/);
+  assert.doesNotMatch(JSON.stringify(kernelQuestions), /α/);
+});

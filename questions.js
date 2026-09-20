@@ -249,16 +249,16 @@ export const questions = [
   {
     section: "Kernel ridge",
     category: "KRR coefficients",
-    prompt: "For ‖y − Kα‖₂² + λαᵀKα, which is the standard KRR coefficient solution when λ > 0?",
+    prompt: "For ‖y − Kβ‖₂² + λβᵀKβ, which is the standard KRR coefficient solution when λ > 0?",
     options: [
-      "α = (K + λI)⁻¹y",
-      "α = (KᵀK + λI)⁻¹Kᵀy",
-      "α = K⁻¹y for every λ",
-      "α = (XᵀX + λI)⁻¹Xᵀy"
+      "β = (K + λI)⁻¹y",
+      "β = (KᵀK + λI)⁻¹Kᵀy",
+      "β = K⁻¹y for every λ",
+      "β = (XᵀX + λI)⁻¹Xᵀy"
     ],
     answer: 0,
-    explanation: "The KRR/RKHS penalty is αᵀKα, giving the canonical solution (K + λI)⁻¹y. The tempting KᵀK formula instead penalizes ‖α‖₂². If K is singular, the canonical vector is a minimizer, though coefficient vectors need not be unique.",
-    activity: "Compare the penalties αᵀKα and αᵀα. Which normal equation does each lead to?",
+    explanation: "The KRR/RKHS penalty is βᵀKβ, giving the canonical solution (K + λI)⁻¹y. The tempting KᵀK formula instead penalizes ‖β‖₂². If K is singular, the canonical vector is a minimizer, though coefficient vectors need not be unique.",
+    activity: "Compare the penalties βᵀKβ and βᵀβ. Which normal equation does each lead to?",
     demo: false
   },
   {
@@ -269,11 +269,11 @@ export const questions = [
       "Use the new point's unknown target y★ as a feature",
       "Use only the nearest training target",
       "Invert a new (n + 1) × (n + 1) matrix for every prediction",
-      "Compute Σᵢ αᵢ k(x★, xᵢ) using similarities to the training inputs"
+      "Compute Σᵢ βᵢ k(x★, xᵢ) using similarities to the training inputs"
     ],
     answer: 3,
-    explanation: "The learned α coefficients are fixed after training. At a new x★, evaluate its kernel similarity to each training input and take their weighted sum. No target value for x★ is needed.",
-    activity: "For two training inputs, write ŷ(x★) = α₁k(x★,x₁) + α₂k(x★,x₂). What changes when x★ changes?",
+    explanation: "The learned β coefficients are fixed after training. At a new x★, evaluate its kernel similarity to each training input and take their weighted sum. No target value for x★ is needed.",
+    activity: "For two training inputs, write ŷ(x★) = β₁k(x★,x₁) + β₂k(x★,x₂). What changes when x★ changes?",
     demo: false
   }
 ];
