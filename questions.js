@@ -264,16 +264,16 @@ export const questions = [
   {
     section: "Kernel ridge",
     category: "Prediction",
-    prompt: "After KRR is trained, how do we predict for a new input x★?",
+    prompt: "After KRR is trained, how do we predict for a new input x?",
     options: [
-      "Use the new point's unknown target y★ as a feature",
+      "Use the new point's unknown target as a feature",
       "Use only the nearest training target",
       "Invert a new (n + 1) × (n + 1) matrix for every prediction",
-      "Compute Σᵢ βᵢ k(x★, xᵢ) using similarities to the training inputs"
+      "Compute Σᵢ βᵢ k(x, xᵢ) using similarities to the training inputs"
     ],
     answer: 3,
-    explanation: "The learned β coefficients are fixed after training. At a new x★, evaluate its kernel similarity to each training input and take their weighted sum. No target value for x★ is needed.",
-    activity: "For two training inputs, write ŷ(x★) = β₁k(x★,x₁) + β₂k(x★,x₂). What changes when x★ changes?",
+    explanation: "The learned β coefficients are fixed after training. At a new input x, evaluate its kernel similarity to each training input and take their weighted sum. No target value for x is needed.",
+    activity: "For two training inputs, write ŷ(x) = β₁k(x,x₁) + β₂k(x,x₂). What changes when x changes?",
     demo: false
   }
 ];

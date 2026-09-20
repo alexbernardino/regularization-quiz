@@ -43,4 +43,5 @@ test('kernel ridge questions use the slides coefficient notation', () => {
   const kernelQuestions = questions.filter(q => q.section === 'Kernel ridge');
   assert.match(kernelQuestions.find(q => q.category === 'KRR coefficients').prompt, /Kβ/);
   assert.doesNotMatch(JSON.stringify(kernelQuestions), /α/);
+  assert.doesNotMatch(JSON.stringify(kernelQuestions.at(-1)), /★/);
 });

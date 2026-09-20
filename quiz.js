@@ -42,7 +42,7 @@ function visual(section) {
     <path d="M48 115L119 52M119 52L187 97M48 115L187 97" stroke="#aeb7c9" stroke-dasharray="4 4"/>
     <path d="M119 52L122 118" stroke="#315fc7" stroke-width="2" stroke-dasharray="4 3"/>
     <circle cx="48" cy="115" r="8" fill="#cf4d45"/><circle cx="119" cy="52" r="8" fill="#cf4d45"/><circle cx="187" cy="97" r="8" fill="#cf4d45"/><circle cx="122" cy="118" r="8" fill="#315fc7"/>
-    <text x="30" y="137">x₁</text><text x="102" y="35">x₂</text><text x="184" y="121">x₃</text><text x="127" y="137">x★</text>
+    <text x="30" y="137">x₁</text><text x="102" y="35">x₂</text><text x="184" y="121">x₃</text><text x="127" y="137">x</text>
     <text x="35" y="160" class="visual-caption">Similarity to training inputs</text>
   </svg>`;
 }
