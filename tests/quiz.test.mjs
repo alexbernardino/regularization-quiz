@@ -29,3 +29,11 @@ test('demo links are reserved for topics supported by the companion demo', () =>
     assert.equal(q.section, 'Regularization', q.prompt);
   }
 });
+
+test('intercept question defines its coefficients and excludes the intercept from the penalty', () => {
+  const q = questions[9];
+  assert.match(q.prompt, /β₀ is the intercept/);
+  assert.match(q.prompt, /β = .*contains only feature coefficients/);
+  assert.equal(q.options[q.answer], 'λ‖β‖₂²');
+  assert.match(q.explanation, /1ₙ is the n-vector of ones/);
+});

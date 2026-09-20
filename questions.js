@@ -129,15 +129,15 @@ export const questions = [
   {
     section: "Regularization",
     category: "The intercept",
-    prompt: "For uncentred data, which ridge objective leaves the intercept unpenalized?",
+    prompt: "In ŷ(x) = β₀ + xᵀβ, β₀ is the intercept and β = (β₁, …, βₚ)ᵀ contains only feature coefficients. Which ridge penalty leaves the intercept unpenalized?",
     options: [
-      "min ‖y − b1 − Xβ‖₂² + λ(b² + ‖β‖₂²)",
-      "min ‖y − Xβ‖₂² + λb²",
-      "min ‖y − b1 − Xβ‖₂² + λ‖β‖₂²",
-      "min ‖y − b1 − Xβ‖₂² − λ‖β‖₂²"
+      "λ(β₀² + ‖β‖₂²)",
+      "λβ₀²",
+      "λ‖β‖₂²",
+      "λ‖β‖₁"
     ],
     answer: 2,
-    explanation: "The intercept b gives the prediction's baseline and is normally excluded from the penalty. For the fitted slope β, b̂ = ȳ − x̄ᵀβ̂; equivalently, centre X and y before fitting the slopes.",
+    explanation: "Only the feature coefficients are penalized. The full objective is min over β₀ and β of ‖y − β₀·1ₙ − Xβ‖₂² + λ‖β‖₂², where 1ₙ is the n-vector of ones. The intercept is excluded; at the optimum, β̂₀ = ȳ − x̄ᵀβ̂.",
     activity: "The demo penalizes the slope but not the intercept. Raise L2 strength and observe how the line pivots toward a constant prediction.",
     demo: true
   },
