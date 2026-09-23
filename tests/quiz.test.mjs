@@ -3,14 +3,15 @@ import assert from 'node:assert/strict';
 import { questions } from '../questions.js';
 
 test('question bank has the intended emphasis and unique prompts', () => {
-  assert.equal(questions.length, 19);
+  assert.equal(questions.length, 15);
   assert.deepEqual(
-    ['Feature expansion', 'Regularization', 'Kernel ridge'].map(section => questions.filter(q => q.section === section).length),
-    [4, 11, 4]
+    ['Feature expansion', 'Regularization'].map(section => questions.filter(q => q.section === section).length),
+    [4, 11]
   );
   assert.equal(new Set(questions.map(q => q.prompt)).size, questions.length);
-  assert.deepEqual([0, 1, 2, 3].map(answer => questions.filter(q => q.answer === answer).length), [4, 5, 5, 5]);
+  assert.deepEqual([0, 1, 2, 3].map(answer => questions.filter(q => q.answer === answer).length), [3, 4, 4, 4]);
   assert.ok(!questions.some(q => q.category === 'Choosing λ'));
+  assert.doesNotMatch(JSON.stringify(questions), /kernel|KRR/i);
 });
 
 test('every question has one valid answer and substantive feedback', () => {
@@ -37,11 +38,4 @@ test('intercept question defines its coefficients and excludes the intercept fro
   assert.match(q.prompt, /β = .*contains only feature coefficients/);
   assert.equal(q.options[q.answer], 'λ‖β‖₂²');
   assert.match(q.explanation, /1ₙ is the n-vector of ones/);
-});
-
-test('kernel ridge questions use the slides coefficient notation', () => {
-  const kernelQuestions = questions.filter(q => q.section === 'Kernel ridge');
-  assert.match(kernelQuestions.find(q => q.category === 'KRR coefficients').prompt, /Kβ/);
-  assert.doesNotMatch(JSON.stringify(kernelQuestions), /α/);
-  assert.doesNotMatch(JSON.stringify(kernelQuestions.at(-1)), /★/);
 });

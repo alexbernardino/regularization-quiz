@@ -2,7 +2,7 @@ import { questions } from "./questions.js";
 
 const root = document.querySelector("#quiz-root");
 const demoUrl = "https://alexbernardino.github.io/regression-interactive/";
-const sections = ["Feature expansion", "Regularization", "Kernel ridge"];
+const sections = ["Feature expansion", "Regularization"];
 let answers = Array(questions.length).fill(null);
 let current = 0;
 let finished = false;
@@ -26,24 +26,14 @@ function visual(section) {
       <text x="207" y="154">x</text><text x="14" y="22">y</text><text x="36" y="161" class="visual-caption">Illustration · not live data</text>
     </svg>`;
   }
-  if (section === "Regularization") {
-    return `<svg class="mini-visual" viewBox="0 0 240 170" role="img" aria-label="Schematic coefficient-space contours and regularization boundaries">
-      <rect width="240" height="170" fill="#f4f1e8"/><path d="M25 86H221M118 18V145" fill="none" stroke="#697183"/>
-      <ellipse cx="151" cy="65" rx="54" ry="25" transform="rotate(-31 151 65)" fill="none" stroke="#cf4d45" stroke-width="1.5"/>
-      <ellipse cx="151" cy="65" rx="36" ry="16" transform="rotate(-31 151 65)" fill="none" stroke="#cf4d45" opacity=".55"/>
-      <circle cx="118" cy="86" r="42" fill="#315fc70f" stroke="#315fc7" stroke-width="2"/>
-      <path d="M118 36L168 86L118 136L68 86Z" fill="none" stroke="#178464" stroke-width="2"/>
-      <circle cx="151" cy="65" r="3.5" fill="#cf4d45"/><text x="198" y="101">β₁</text><text x="121" y="19">β₂</text>
-      <text x="37" y="161" class="visual-caption">Coefficient-space sketch</text>
-    </svg>`;
-  }
-  return `<svg class="mini-visual" viewBox="0 0 240 170" role="img" aria-label="A new input compared with three training inputs using kernel similarities">
-    <rect width="240" height="170" fill="#f4f1e8"/>
-    <path d="M48 115L119 52M119 52L187 97M48 115L187 97" stroke="#aeb7c9" stroke-dasharray="4 4"/>
-    <path d="M119 52L122 118" stroke="#315fc7" stroke-width="2" stroke-dasharray="4 3"/>
-    <circle cx="48" cy="115" r="8" fill="#cf4d45"/><circle cx="119" cy="52" r="8" fill="#cf4d45"/><circle cx="187" cy="97" r="8" fill="#cf4d45"/><circle cx="122" cy="118" r="8" fill="#315fc7"/>
-    <text x="30" y="137">x₁</text><text x="102" y="35">x₂</text><text x="184" y="121">x₃</text><text x="127" y="137">x</text>
-    <text x="35" y="160" class="visual-caption">Similarity to training inputs</text>
+  return `<svg class="mini-visual" viewBox="0 0 240 170" role="img" aria-label="Schematic coefficient-space contours and regularization boundaries">
+    <rect width="240" height="170" fill="#f4f1e8"/><path d="M25 86H221M118 18V145" fill="none" stroke="#697183"/>
+    <ellipse cx="151" cy="65" rx="54" ry="25" transform="rotate(-31 151 65)" fill="none" stroke="#cf4d45" stroke-width="1.5"/>
+    <ellipse cx="151" cy="65" rx="36" ry="16" transform="rotate(-31 151 65)" fill="none" stroke="#cf4d45" opacity=".55"/>
+    <circle cx="118" cy="86" r="42" fill="#315fc70f" stroke="#315fc7" stroke-width="2"/>
+    <path d="M118 36L168 86L118 136L68 86Z" fill="none" stroke="#178464" stroke-width="2"/>
+    <circle cx="151" cy="65" r="3.5" fill="#cf4d45"/><text x="198" y="101">β₁</text><text x="121" y="19">β₂</text>
+    <text x="37" y="161" class="visual-caption">Coefficient-space sketch</text>
   </svg>`;
 }
 

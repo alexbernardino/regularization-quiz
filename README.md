@@ -1,10 +1,9 @@
 # Regularization concept check
 
-A 19-question formative quiz in the visual and interaction style of the existing [KNN](https://alexbernardino.github.io/knn-quiz/) and [regression](https://alexbernardino.github.io/regression-quiz/) quizzes.
+A 15-question formative quiz in the visual and interaction style of the existing [KNN](https://alexbernardino.github.io/knn-quiz/) and [regression](https://alexbernardino.github.io/regression-quiz/) quizzes.
 
 - 4 questions on nonlinear feature expansion and RBFs
 - 11 on ridge, lasso, sparsity, scaling, intercepts, and bias–variance
-- 4 on kernels and kernel ridge regression
 
 Students answer one question at a time, get immediate feedback, can go back to review, and see a section-by-section result. Relevant questions link to the [interactive regression demo](https://alexbernardino.github.io/regression-interactive/). The quiz needs no account, server, package installation, or network API; answers and scores live only in the open browser tab.
 
@@ -33,6 +32,6 @@ To regenerate the image if the quiz URL changes, edit `QUIZ_URL` in `tools/gener
 
 ## Teaching notes
 
-The quiz follows the updated lecture PDF's nonlinear feature expansion, RBF, ridge/lasso, and kernel ridge sections (slide numbers 62–85). It deliberately distinguishes the lecture's summed squared-error objective from the companion demo's mean-squared-error convention: slider values need not match λ values numerically. In the slides' notation, KRR uses the canonical penalty βᵀKβ, not a Euclidean penalty on β. The intercept is not penalized.
+The quiz follows the updated lecture PDF's nonlinear feature-expansion, RBF, ridge, and lasso sections (slides 62–82). It deliberately distinguishes the lecture's summed squared-error objective from the companion demo's mean-squared-error convention: slider values need not match λ values numerically. The intercept is not penalized.
 
 Edit `questions.js` to revise the bank. Each item has four options, a zero-based answer index, feedback, a follow-up activity, and a Boolean indicating whether the companion demo genuinely supports the activity. Update the count assertions in `tests/quiz.test.mjs` if you add or remove questions.
